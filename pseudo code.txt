@@ -1,0 +1,125 @@
+HTML Heading 1 title 
+HTML Heading 3 Description
+HTML Select language selection 
+
+HTML Radio Button Lines 
+HTML Number Line size
+
+
+HTML Radio Button circles
+HTML Ranger Radius
+
+HTML Radio Button rectangles 
+HTML Ranger width
+HTML Ranger height
+
+HTML Ranger for  x, y ending positions
+HTML Ranger for  x, y starting positions
+HTML Select for color
+
+
+HTML Button draw 
+HTML Button clear
+HTML Button save
+
+
+HTML Forms
+Input text username  required
+Input email email  required
+Input password password   required
+Input password confirmed password   required
+Input tel phone number
+Input file upload   required
+Input submit submit
+Input reset reset
+
+
+CSS SET DIV FORM BUTTON
+
+
+
+JS for drawing :
+
+GET canvas id
+CREATE canvas obj
+
+GET draw button id
+ADD click event
+CREATE FUNCTION drawShape {
+
+    GET x, y starting value
+    GET color value
+
+    IF user choose line {
+         GET line size value
+        GET x, y ending value
+        Draw Line
+}
+    ELSE IF user choose circle {
+        GET line size radius 
+        GET radius
+        Draw circle
+}
+    ELSE  user choose rectangles {
+        GET width
+        GET height
+        Draw rect
+}
+}
+
+
+GET clear button id
+Add click event
+CREATE FUNCTION clearCanvas {
+
+    call clearRect()
+}
+
+GET save button id
+Add click event
+CREATE FUNCTION saveImages {
+    canvas.toDataURL
+    set link 
+    set image
+}
+
+
+JS for form :
+
+GET password id
+ADD change event
+CREATE FUNCTION validatePassword {
+    IF password value not equal to confirmed password value
+        OUTPUT password don't match
+        REST password
+        REST confirmed password
+}
+    ELSE {
+        setCustomValidity equal none
+} 
+}
+
+GET form id
+ADD submit event
+CREATE FUNCTION {
+    IF not valid {
+        Call e.preventDefault()
+    }
+    ELSE {
+        HTML with success message and time
+    }
+}
+
+JS for language :
+
+Get H1, H3 , p class names
+
+GET language value
+IF user selct Chinese {
+
+    H1.style.color is blue
+    for NodeList {
+        innerHTML is Chinese language
+    }
+
+}
