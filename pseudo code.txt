@@ -40,86 +40,86 @@ CSS SET DIV FORM BUTTON
 
 JS for drawing :
 
-GET canvas id
+USE canvas id
 CREATE canvas obj
 
-GET draw button id
-ADD click event
-CREATE FUNCTION drawShape {
+USE button draw id
+CREATE click event for draw
+CREATE FUNCTION drawShape 
 
     GET x, y starting value
     GET color value
 
-    IF user choose line {
-         GET line size value
+    IF (user choose line) then 
+        (GET line size value
         GET x, y ending value
-        Draw Line
-}
-    ELSE IF user choose circle {
-        GET line size radius 
+        Draw Line)
+
+    ELSE IF (user choose circle) then
+        (GET line size radius 
         GET radius
-        Draw circle
-}
-    ELSE  user choose rectangles {
-        GET width
+        Draw circle)
+
+    ELSE (user choose rectangles) then
+        (GET width
         GET height
-        Draw rect
-}
-}
+        Draw rect)
 
 
-GET clear button id
-Add click event
-CREATE FUNCTION clearCanvas {
+USE button clear id
+CREATE click event
+CREATE FUNCTION clearCanvas 
 
     call clearRect()
-}
 
-GET save button id
-Add click event
-CREATE FUNCTION saveImages {
+
+USE button save id
+CREATE click event
+CREATE FUNCTION saveImages 
     canvas.toDataURL
     set link 
     set image
-}
+
 
 
 JS for form :
 
-GET password id
-ADD change event
-CREATE FUNCTION validatePassword {
-    IF password value not equal to confirmed password value
-        OUTPUT password don't match
+USE password id
+CREATE change event
+CREATE FUNCTION validatePassword 
+    IF (password value not equal to confirmed password value) then
+        (OUTPUT password don't match
         REST password
-        REST confirmed password
-}
-    ELSE {
-        setCustomValidity equal none
-} 
-}
+        REST confirmed password)
 
-GET form id
-ADD submit event
-CREATE FUNCTION {
-    IF not valid {
+    ELSE 
+        (setCustomValidity equal none)
+
+USE form id
+CREATE submit event
+CREATE FUNCTION 
+    IF (not valid)
         Call e.preventDefault()
-    }
-    ELSE {
-        HTML with success message and time
-    }
-}
+    
+    ELSE 
+        (HTML with success message and time)
+
+
 
 JS for language :
 
-Get H1, H3 , p class names
-
+GET H1, H3, p innerHTML value
+GET H1 color value
 GET language value
-IF user selct Chinese {
 
-    H1.style.color is blue
-    for NodeList {
-        innerHTML is Chinese language
-    }
+SET NodeList equal H1, H3 , p class names
 
-}
+IF (user select Chinese)
+
+    (H1.style.color is blue
+    for each (NodeList)
+        (innerHTML is Chinese language))
+    
+ELSE 
+    (H1 color is Orange
+    SET H1, H3, p innerHTML value to original)
