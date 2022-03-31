@@ -30,13 +30,15 @@
 
 
     <div class="right">
-      <label for="starX"><b>Starting Point for X coordinate (0 - 400)</b></label>
+      <div class="draw-control">
+      <h4>Drawing control</h4>
+      <label for="starX">Starting Point for X coordinate (0 - 400)</label>
       <input type="number" id="starX" min="0" max="400"> <br>
       
-      <label for="starY"><b>Starting Point for Y coordinate (0 - 400)</b></label>
+      <label for="starY">Starting Point for Y coordinate (0 - 400)</label>
       <input type="number" id="starY" min="0" max="400">
   
-      <h4>Choose a shape:</h4>
+      <p>Choose a shape:</p>
       <!-- line shape -->
       <input type="radio" id="line" name="shape">
         <label for="line">Line</label><br>
@@ -45,7 +47,14 @@
         <label for="endX">Ending Point for X coordinate (0 - 400)</label>
         <input type="number" id="endX" min="0" max="400"><br>
         <label for="endY">Ending Point for Y coordinate (0 - 400)</label>
-        <input type="number" id="endY" min="0" max="400">
+        <input type="number" id="endY" min="0" max="400"><br>
+        <label for="lineWidth">Select a line width</label>
+        <select id="lineWidth">
+          <option value="1">Thin</option>
+          <option value="3">Normal</option>
+          <option value="5">Thick</option>
+          <option value="7">Extra Thick</option>
+        </select>
       </div>
 
       <!-- circle shape -->
@@ -70,6 +79,18 @@
         <input type="range" id="height-value" min="0" max="200" value="50">
         <p class="display-height">Value:<span id="display-height-value"></span></p><br>
       </div>
+
+      <!-- user choose color -->
+      <div class="color-palette">
+      <label for="color">Choose your favorite color</label><br>
+      <input type="color" id="color">
+      </div>
+
+      <!-- buttons -->
+      <button id="draw-btn">Draw</button>
+      <button id="clear-btn">Clear</button>
+      <button id="image-btn">Save as image</button>
+    </div>
 
     </div>
 

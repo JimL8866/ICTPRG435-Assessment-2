@@ -5,7 +5,7 @@ body {
 }
 
 h4 {
-  margin: 0.5rem 0;
+  margin: 1 rem 0;
 
 }
 
@@ -18,10 +18,8 @@ h4 {
 
 /* Style the title */
 .title {
-
   text-align: center;
   font-size: 3rem;
-
 }
 
 
@@ -69,7 +67,7 @@ h4 {
 
 /* Style canvas */
 .canvas {
-  padding: 6rem 0;
+  padding: 3rem 0;
 
 }
 
@@ -82,6 +80,11 @@ h4 {
 
 
 
+.draw-control{
+  padding: 3rem 0;
+}
+
+
 /* endvalue, radius, width and height display none */
 .end-value,.radius,.width-height {
   display: none;
@@ -91,6 +94,66 @@ h4 {
 .display-radius,.display-width,.display-height {
   display: inline-block
 }
+
+.color-palette {
+  padding: 0.5rem 0;
+  padding-bottom: 1rem;
+}
+
+
+/* button */
+
+#draw-btn {
+  background: #3498db;
+  border-radius: 2rem;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin:0 1rem;
+  text-align: center;
+}
+
+#draw-btn:hover {
+  background: #3cb0fd;
+}
+
+#clear-btn {
+  background: #d80a48;
+  border-radius: 2rem;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin:0 1rem;
+  text-align: center;
+}
+
+#clear-btn:hover {
+  background: #ec4972;
+}
+
+#image-btn {
+  background: #05a81b;
+  border-radius: 2rem;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin:0 1rem;
+  text-align: center;
+}
+
+#image-btn:hover {
+  background: #6dce61;
+}
+
+
+
+
+
+
+
 
 
 /* Style the footer */
