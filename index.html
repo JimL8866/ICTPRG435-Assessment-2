@@ -30,45 +30,46 @@
 
 
     <div class="right">
-      <p>Step 1: Enter Starting Point for X and Y</p>
-      <input type="number" id="starX" min="0" max="400">
-      <label for="starX">Between 0 and 400</label><br>
+      <label for="starX"><b>Starting Point for X coordinate (0 - 400)</b></label>
+      <input type="number" id="starX" min="0" max="400"> <br>
+      
+      <label for="starY"><b>Starting Point for Y coordinate (0 - 400)</b></label>
       <input type="number" id="starY" min="0" max="400">
-      <label for="starY">Between 0 and 400</label><br>
-
-
-
-      <p>Step 2:Choose a shape:</p>
-
+  
+      <h4>Choose a shape:</h4>
+      <!-- line shape -->
       <input type="radio" id="line" name="shape">
         <label for="line">Line</label><br>
 
-      <div class="endv-alue">
-        <input type="number" id="starX" min="0" max="400">
-        <label for="starX">Between 0 and 400</label><br>
-        <input type="number" id="starY" min="0" max="400">
-        <label for="starY">Between 0 and 400</label><br>
+      <div class="end-value">
+        <label for="endX">Ending Point for X coordinate (0 - 400)</label>
+        <input type="number" id="endX" min="0" max="400"><br>
+        <label for="endY">Ending Point for Y coordinate (0 - 400)</label>
+        <input type="number" id="endY" min="0" max="400">
       </div>
 
-
-
-
-
+      <!-- circle shape -->
       <input type="radio" id="circle" name="shape">
         <label for="circle">Circle</label><br>
 
       <div class="radius">
-        <input type="range" id="radius-value" min="0" max="400" >
-        <label for="radius-value">Radius (between 0 and 100) </label><br>
+        <label for="radius-value">Select Radius (0 - 100) </label>
+        <input type="range" id="radius-value" min="0" max="100" value="10">
+        <p class="display-radius">Value:<span id="display-radius-value"></span></p><br>
       </div>
 
-
-
-
-
+    <!-- Rectangle shape -->
       <input type="radio" id="rect" name="shape">
         <label for="rect">Rectangle</label><br>
 
+      <div class="width-height">
+        <label for="width-value">Select Width (0 - 200) </label>
+        <input type="range" id="width-value" min="0" max="200" value="50">
+        <p class="display-width">Value:<span id="display-width-value"></span></p><br>
+        <label for="width-value">Select Height (0 - 200) </label>
+        <input type="range" id="height-value" min="0" max="200" value="50">
+        <p class="display-height">Value:<span id="display-height-value"></span></p><br>
+      </div>
 
     </div>
 

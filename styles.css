@@ -4,6 +4,11 @@ body {
   background-color: #DFDFDE;
 }
 
+h4 {
+  margin: 0.5rem 0;
+
+}
+
 /* Style the header */
 .header {
   grid-area: header;
@@ -77,13 +82,15 @@ body {
 
 
 
-/* endvalue dispaly */
-
-.endvalue {
+/* endvalue, radius, width and height display none */
+.end-value,.radius,.width-height {
   display: none;
+  padding:0.5rem;
 }
 
-
+.display-radius,.display-width,.display-height {
+  display: inline-block
+}
 
 
 /* Style the footer */
