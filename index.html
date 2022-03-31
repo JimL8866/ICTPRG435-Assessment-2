@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Competition</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="header">
+      <h1 class="title">Abstract Art Competition</h1>
+      <p class="instructions">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+
+    <div class="left">
+      <div class="canvas">
+        <canvas id="myCanvas"> </canvas>
+      </div>
+    </div>
+
+
+    <div class="right">
+      <p>Step 1: Enter Starting Point for X and Y</p>
+      <input type="number" id="starX" min="0" max="400">
+      <label for="starX">Between 0 and 400</label><br>
+      <input type="number" id="starY" min="0" max="400">
+      <label for="starY">Between 0 and 400</label><br>
+
+
+
+      <p>Step 2:Choose a shape:</p>
+
+      <input type="radio" id="line" name="shape">
+        <label for="line">Line</label><br>
+
+      <div class="endv-alue">
+        <input type="number" id="starX" min="0" max="400">
+        <label for="starX">Between 0 and 400</label><br>
+        <input type="number" id="starY" min="0" max="400">
+        <label for="starY">Between 0 and 400</label><br>
+      </div>
+
+
+
+
+
+      <input type="radio" id="circle" name="shape">
+        <label for="circle">Circle</label><br>
+
+      <div class="radius">
+        <input type="range" id="radius-value" min="0" max="400" >
+        <label for="radius-value">Radius (between 0 and 100) </label><br>
+      </div>
+
+
+
+
+
+      <input type="radio" id="rect" name="shape">
+        <label for="rect">Rectangle</label><br>
+
+
+    </div>
+
+    <div id="reg-form">
+      <p>form</p>
+    </div>
+
+    <div class="footer">
+      <p>Footer</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
