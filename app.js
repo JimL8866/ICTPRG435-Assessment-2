@@ -178,7 +178,6 @@ else {
 }
 
 
-
 const date = new Date()
 let year = date.getFullYear()
 
@@ -188,3 +187,64 @@ submit.addEventListener("submit",()=>alert(`Your form has been submitted success
 
 //copyright
 document.getElementById("copyright").innerHTML=`&copy; ${year} JL`
+
+
+//language switch
+let language ={
+    en: {
+        "title switch": "Abstract Art Competition", 
+
+        "instructions switch": `Welcome to the abstract art competition! On this webpage, there are two sections. 
+        The first is the drawing section. In there you are free to draw a picture on canvas by using a range of 
+        drawing tools such as lines, circles, rectangles, color, and so on. After completion, it is recommended 
+        that you save your artwork to a jpeg file so you can upload it later.  The second section is the registration 
+        form, where you have to enter your username, password, email, and mobile number. And don't forget to upload 
+        your picture! After submitting your form, you will receive an alert message saying submission successfully.  
+        You will be notified of the result in two weeks.`,
+
+        "h4 switch" : "Drawing control",
+
+        "h5 switch" : "Please complete the following registration form for entering competition:",
+    },
+
+    cn:{
+        "title switch": "抽象艺术竞赛",
+
+        "instructions switch": `欢迎参加抽象艺术比赛！这个网页分为两部分。首先是绘图部分。在那里，您可以使用一系列绘图工具，如线条、
+        圆形、矩形、颜色等。完成后，建议将您的作品保存为 jpeg 文件，以便以后上传。第二部分是注册表，您必须在其中输入您的用户名、密码、
+        电子邮件和手机号码。对了别忘记上传您的图片！提交表单后，您将收到一条提示信息，提示您提交成功。竞赛结果两周后会通知您。`,
+
+        "h4 switch" : "绘图工具",
+
+        "h5 switch" : "请填写以下报名表以参加比赛:",
+    }
+}
+
+
+let switcher = document.querySelectorAll(".switch")
+// console.log(switcher)
+let chooseLan = document.getElementById("language")
+chooseLan.addEventListener("change", changeLanguage)
+
+function changeLanguage(){
+
+    if (chooseLan.value =="cn") {
+        
+        for (i=0; i <switcher.length; i++) {
+            switcher[i].innerHTML = language.cn[switcher[i].className]
+        }
+    }
+    else {
+        for (i=0; i <switcher.length; i++) {
+            switcher[i].innerHTML = language.en[switcher[i].className]
+        }
+    }
+
+
+
+}
+
+
+
+
+

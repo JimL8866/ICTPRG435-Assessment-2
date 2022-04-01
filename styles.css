@@ -10,21 +10,33 @@ h4 {
 
 /* Style the header */
 .header {
+  position: relative;
   grid-area: header;
   background-color: #f1f1f1;
   padding: 3rem;
 }
 
+.lan{
+  position: absolute;
+  top:1rem;
+  right:1rem;
+  font-size:0.8rem;
+}
+
+
 /* Style the title */
 .title {
   text-align: center;
   font-size: 2rem;
+  color:#0093AB
 }
 
 /* Style instruction */
 .instructions {
-  text-align: center;
+  text-align: justify;
   background-color: #f1f1f1;
+  font-size:0.9rem;
+  color: #00AFC1
 }
 
 /* The grid container */
@@ -167,7 +179,7 @@ h4 {
       'header' 
       'left' 
       'right' 
-      'footer' 
+      'form' 
       'footer';
   }
 } 
