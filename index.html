@@ -24,7 +24,7 @@
 
     <div class="left">
       <div class="canvas">
-        <canvas id="myCanvas"> </canvas>
+        <canvas id="myCanvas" width="400" height="400"> </canvas>
       </div>
     </div>
 
@@ -32,11 +32,15 @@
     <div class="right">
       <div class="draw-control">
       <h4>Drawing control</h4>
-      <label for="starX">Starting Point for X coordinate (0 - 400)</label>
-      <input type="number" id="starX" min="0" max="400"> <br>
+
+      <!-- starting value for x and y -->
+      <label for="startX">Select starting position X (0 - 400)</label>
+      <input type="range" id="startX" min="0" max="400" value="0">
+      <p class="display-startX">Value:<span id="display-startX-value"></span></p><br>
       
-      <label for="starY">Starting Point for Y coordinate (0 - 400)</label>
-      <input type="number" id="starY" min="0" max="400">
+      <label for="startY">Select starting position Y (0 - 400)</label>
+      <input type="range" id="startY" min="0" max="400" value="0">
+      <p class="display-startY">Value:<span id="display-startY-value"></span></p><br>
   
       <p>Choose a shape:</p>
       <!-- line shape -->
@@ -44,10 +48,14 @@
         <label for="line">Line</label><br>
 
       <div class="end-value">
-        <label for="endX">Ending Point for X coordinate (0 - 400)</label>
-        <input type="number" id="endX" min="0" max="400"><br>
-        <label for="endY">Ending Point for Y coordinate (0 - 400)</label>
-        <input type="number" id="endY" min="0" max="400"><br>
+        <label for="endX">Select ending position X (0 - 400)</label>
+        <input type="range" id="endX" min="0" max="400" value="400">
+        <p class="display-endX">Value:<span id="display-endX-value"></span></p><br>
+
+        <label for="endY">Select ending position Y (0 - 400)</label>
+        <input type="range" id="endY" min="0" max="400" value="400">
+        <p class="display-endY">Value:<span id="display-endY-value"></span></p><br>
+
         <label for="lineWidth">Select a line width</label>
         <select id="lineWidth">
           <option value="1">Thin</option>
@@ -82,14 +90,19 @@
 
       <!-- user choose color -->
       <div class="color-palette">
-      <label for="color">Choose your favorite color</label><br>
-      <input type="color" id="color">
+      <p>Choose your favorite color:</p>
+      <label for="bcolor">Border color:</label>
+      <input type="color" id="bcolor">
+      <div class="fill-color">
+      <label for="fcolor">Fill color:</label>
+      <input type="color" id="fcolor" value="#FFFFFF">
+      </div>
       </div>
 
       <!-- buttons -->
       <button id="draw-btn">Draw</button>
       <button id="clear-btn">Clear</button>
-      <button id="image-btn">Save as image</button>
+      <button id="image-btn">Save Drawing</button>
     </div>
 
     </div>
