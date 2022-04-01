@@ -8,7 +8,7 @@ lineId.addEventListener("click",() =>{
         radius.style.display ="none"
         widthHeight.style.display="none"
         fillcolor.style.display = "none"
-        
+
     }
 })
 
@@ -36,7 +36,6 @@ rectId.addEventListener("click",() =>{
         fillcolor.style.display="inline-block"
     }
 })
-
 
 //dislay starting X, Y position in slider
 let startX = document.querySelector("#startX");
@@ -160,4 +159,32 @@ function download(){
     link.download = "my-image.png";
     link.href = image;
     link.click();
-  }
+}
+
+//password validation
+let conPwd = document.querySelector("#confirmed-pwd");
+let pwd = document.querySelector("#pwd")
+conPwd.addEventListener('change', validatePassword);
+
+function validatePassword(){
+if(pwd.value != conPwd.value) {
+    conPwd.setCustomValidity("Passwords Don't Match");
+    conPwd.reportValidity();
+}
+else {
+    conPwd.setCustomValidity('');
+    conPwd.reportValidity();
+}
+}
+
+
+
+const date = new Date()
+let year = date.getFullYear()
+
+//submit form
+const submit= document.getElementById("reg-form");
+submit.addEventListener("submit",()=>alert(`Your form has been submitted successfully on\n${date}`))
+
+//copyright
+document.getElementById("copyright").innerHTML=`&copy; ${year} JL`
