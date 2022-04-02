@@ -204,6 +204,12 @@ let language ={
 
         "h4 switch" : "Drawing control",
 
+        "draw switch" : "Draw",
+
+        "clear switch" : "Clear",
+
+        "download switch" : "Save Drawing",
+
         "h5 switch" : "Please complete the following registration form for entering competition:",
     },
 
@@ -216,28 +222,39 @@ let language ={
 
         "h4 switch" : "绘图工具",
 
+        "draw switch" : "绘图",
+
+        "clear switch" : "清空",
+
+        "download switch" : "保存图片",
+
         "h5 switch" : "请填写以下报名表以参加比赛:",
     }
 }
 
 
 let switcher = document.querySelectorAll(".switch")
-// console.log(switcher)
+console.log(switcher[8].className)
 let chooseLan = document.getElementById("language")
 chooseLan.addEventListener("change", changeLanguage)
+let h1ID = document.querySelector(".title")
+let h1Color=h1ID.style.color
+
 
 function changeLanguage(){
 
     if (chooseLan.value =="cn") {
-        
+        h1ID.style.color = "Orange";
         for (i=0; i <switcher.length; i++) {
             switcher[i].innerHTML = language.cn[switcher[i].className]
+
         }
     }
     else {
         for (i=0; i <switcher.length; i++) {
             switcher[i].innerHTML = language.en[switcher[i].className]
         }
+        h1ID.style.color = h1Color;
     }
 
 

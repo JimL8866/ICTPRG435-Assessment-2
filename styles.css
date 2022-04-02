@@ -5,8 +5,13 @@ body {
 }
 
 h4 {
-  margin: 1 rem 0;
+  margin: 0.5rem 0;
 }
+
+h5 {
+  margin: 0.5rem 0 1.5rem 0;
+}
+
 
 /* Style the header */
 .header {
@@ -22,7 +27,10 @@ h4 {
   right:1rem;
   font-size:0.8rem;
 }
-
+ 
+.fa-solid{
+  color: #F56D91
+}
 
 /* Style the title */
 .title {
@@ -81,7 +89,7 @@ h4 {
 }
 
 .draw-control{
-  padding: 3rem 0;
+  padding: 1rem;
 }
 
 /* endvalue, radius, width and height display none */
@@ -170,6 +178,32 @@ h4 {
   padding: 10px;
   text-align: center;
   height: 3rem;
+  border-top: 1px solid rgb(221, 217, 217)
+}
+
+#copyright {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.icon {
+  display: flex;
+  display: inline-block;
+}
+
+#twitter{
+  color:#5584AC;
+  margin:0 1rem 0 0;
+
+}
+
+#linkedin{
+  color: #1C658C
+}
+
+#facebook{
+  color:#11468F;
+  margin:0 1rem 0 0;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -187,7 +221,8 @@ h4 {
 
 .form {
   grid-area: form;
-
+  background-color: #EEEEEE;
+  padding: 0.5rem 1rem;
 }
 
 

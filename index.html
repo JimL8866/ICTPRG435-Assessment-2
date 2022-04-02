@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Art Competition</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/e270e14442.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     <div class="header">
       <h1 class="title switch">Abstract Art Competition</h1>
       <div class="lan">
-        <label for="language">Choose a language: </label><br>
+        <i class="fa-solid fa-globe fa-lg"></i>
         <select id="language" name="language">
           <option value="en">English</option>
           <option value="cn">Chinese</option>
@@ -110,9 +111,9 @@
       </div>
 
       <!-- buttons -->
-      <button id="draw-btn">Draw</button>
-      <button id="clear-btn">Clear</button>
-      <button id="image-btn">Save Drawing</button>
+      <button id="draw-btn" class="draw switch">Draw</button>
+      <button id="clear-btn" class="clear switch">Clear</button>
+      <button id="image-btn" class="download switch">Save Drawing</button>
     </div>
     </div>
 
@@ -139,14 +140,17 @@
       <label for="upload">Attach your art image here:</label>
       <input type="file" name="upload" accept=".jpg" required><br><br>
 
-      <input type="submit" value="Submit" id="submit"> 
-      <input type="reset" value="Reset">
+      <input type="submit" value="Submit" id="submit" class="submit switch"> 
+      <input type="reset" value="Reset" class="reset switch">
     </form>
     
     <div class="footer">
-
       <p id="copyright"></p>
-   
+      <div class="icon">
+      <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-square fa-2xl" id="facebook"></i></a>
+      <a href="https://twitter.com/"><i class="fa-brands fa-twitter fa-2xl" id="twitter"></i></a>
+      <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin fa-2xl" id ="linkedin"></i></a>
+      </div>
     </div>
   </div>
 
@@ -156,3 +160,4 @@
 </body>
 
 </html>
+
