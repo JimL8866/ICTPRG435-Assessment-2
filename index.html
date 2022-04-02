@@ -35,7 +35,7 @@
 
     <div class="left">
       <div class="canvas">
-        <canvas id="myCanvas" width="400" height="400"> </canvas>
+        <canvas id="myCanvas" width="400" height="400"> Your browser does not support the HTML5 canvas tag</canvas>
       </div>
     </div>
 
@@ -45,11 +45,11 @@
       <h4 class="h4 switch">Drawing control</h4>
 
       <!-- starting value for x and y -->
-      <label for="startX">Select starting position X (0 - 400)</label>
+      <label for="startX">Starting position X (0 - 400)</label>
       <input type="range" id="startX" min="0" max="400" value="0">
       <p class="display-startX">Value:<span id="display-startX-value"></span></p><br>
       
-      <label for="startY">Select starting position Y (0 - 400)</label>
+      <label for="startY">Starting position Y (0 - 400)</label>
       <input type="range" id="startY" min="0" max="400" value="0">
       <p class="display-startY">Value:<span id="display-startY-value"></span></p><br>
   
@@ -59,13 +59,16 @@
         <label for="line">Line</label><br>
 
       <div class="end-value">
-        <label for="endX">Select ending position X (0 - 400)</label>
+        <label for="endX">Ending position X (0 - 400)</label>
         <input type="range" id="endX" min="0" max="400" value="400">
         <p class="display-endX">Value:<span id="display-endX-value"></span></p><br>
 
-        <label for="endY">Select ending position Y (0 - 400)</label>
+        <label for="endY">Ending position Y (0 - 400)</label>
         <input type="range" id="endY" min="0" max="400" value="400">
         <p class="display-endY">Value:<span id="display-endY-value"></span></p><br>
+
+
+
 
         <label for="lineWidth">Select a line width</label>
         <select id="lineWidth">
@@ -112,6 +115,7 @@
 
       <!-- buttons -->
       <button id="draw-btn" class="draw switch">Draw</button>
+      <button id="random-btn" class="randow switch">Random</button>
       <button id="clear-btn" class="clear switch">Clear</button>
       <button id="image-btn" class="download switch">Save Drawing</button>
     </div>

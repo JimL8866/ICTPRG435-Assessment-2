@@ -102,9 +102,9 @@ let fcolor = document.querySelector("#fcolor")
 
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
-const drawLine = document.querySelector("#draw-btn");
+const draw = document.querySelector("#draw-btn");
 
-drawLine.addEventListener("click", ()=>{
+draw.addEventListener("click", ()=>{
     if (lineId.checked) {
     ctx.beginPath();
     ctx.moveTo(startX.value, startY.value)
@@ -118,7 +118,7 @@ drawLine.addEventListener("click", ()=>{
 })
 
 //draw circle
-drawLine. addEventListener("click",()=>{
+draw.addEventListener("click",()=>{
     if(circleId.checked){
         ctx.beginPath();
         ctx.arc(startX.value, startY.value, radiusValue.value,0,2 * Math.PI);
@@ -131,10 +131,10 @@ drawLine. addEventListener("click",()=>{
 
 
 //draw rectangle
-drawLine. addEventListener("click",()=>{
+draw.addEventListener("click",()=>{
     if(rectId.checked){
         ctx.beginPath();
-        ctx.rect(startX.value, startY.value,width.value,height.value );
+        ctx.rect(startX.value, startY.value,width.value,height.value)
         ctx.strokeStyle =bcolor.value;
         ctx.stroke();
         ctx.fillStyle = fcolor.value;
@@ -211,6 +211,8 @@ let language ={
         "download switch" : "Save Drawing",
 
         "h5 switch" : "Please complete the following registration form for entering competition:",
+
+        "randow switch":"Random", 
     },
 
     cn:{
@@ -228,13 +230,15 @@ let language ={
 
         "download switch" : "保存图片",
 
+        "randow switch":"随机", 
+
         "h5 switch" : "请填写以下报名表以参加比赛:",
     }
 }
 
 
 let switcher = document.querySelectorAll(".switch")
-console.log(switcher[8].className)
+// console.log(switcher[8].className)
 let chooseLan = document.getElementById("language")
 chooseLan.addEventListener("change", changeLanguage)
 let h1ID = document.querySelector(".title")
@@ -256,11 +260,44 @@ function changeLanguage(){
         }
         h1ID.style.color = h1Color;
     }
-
-
-
 }
 
+//random button click
+let ran = document.querySelector("#random-btn")
+ran.addEventListener("click",randomFunc)
+
+function randomFunc(){
+    let ranStartX = Math.floor(Math.random()*401)
+    startX.value =ranStartX
+    displayStartX.innerHTML = ranStartX
+    let ranStartY= Math.floor(Math.random()*401)
+    startY.value =ranStartY
+    displayStartY.innerHTML = ranStartY
+
+    let ranEndX = Math.floor(Math.random()*401)
+    endX.value =ranEndX
+    displayEndX.innerHTML = ranStartX
+    let ranEndY= Math.floor(Math.random()*401)
+    endY.value =ranEndY
+    displayEndY.innerHTML = ranEndY
+
+    let ranRadius = Math.floor(Math.random()*101)
+    radiusValue.value =ranRadius
+    displayRadius.innerHTML = ranRadius
+
+    let ranWidth = Math.floor(Math.random()*201)
+    width.value =ranWidth 
+    displayWidth.innerHTML = ranWidth 
+    let ranHeight = Math.floor(Math.random()*201)
+    height.value =ranHeight
+    displayHeight.innerHTML = ranStartY
+
+    ranbcolor = Math.floor(Math.random()*16777215).toString(16);
+    bcolor.value = `#${ranbcolor}`
+
+    ranfcolor = Math.floor(Math.random()*16777215).toString(16);
+    fcolor.value = `#${ranfcolor}`
+}
 
 
 
