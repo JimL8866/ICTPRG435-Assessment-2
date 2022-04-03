@@ -189,9 +189,9 @@ const saveImage = document.querySelector("#image-btn")
 saveImage.addEventListener("click", download)
 
 function download(){
-    image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    var link = document.createElement('a');
-    link.download = "my-image.png";
+    image = canvas.toDataURL("image/jpg").replace("image/jpg", "image/octet-stream");
+    var link = document.createElement("a");
+    link.download = "my-art.jpg";
     link.href = image;
     link.click();
 }
