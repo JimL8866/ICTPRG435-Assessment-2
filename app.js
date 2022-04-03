@@ -8,7 +8,7 @@ lineId.addEventListener("click",() =>{
         radius.style.display ="none"
         widthHeight.style.display="none"
         fillcolor.style.display = "none"
-
+        myCanvas.style.cursor="default"
     }
 })
 
@@ -21,6 +21,7 @@ circleId.addEventListener("click",() =>{
         endValue.style.display ="none"
         widthHeight.style.display="none"
         fillcolor.style.display="inline-block"
+        myCanvas.style.cursor="default"
     }
 })
 
@@ -34,8 +35,27 @@ rectId.addEventListener("click",() =>{
         endValue.style.display ="none"
         radius.style.display="none"
         fillcolor.style.display="inline-block"
+        myCanvas.style.cursor="default"
     }
 })
+
+
+//dispaly mouse-line value for user
+let mouseLine = document.querySelector(".mouse-line")
+const mouseID = document.querySelector("#mouse");
+mouseID.addEventListener("click",()=>{
+    if (mouseID.checked){
+    radius.style.display ="none"
+    widthHeight.style.display="none"
+    fillcolor.style.display = "none"
+    endValue.style.display ="none"
+    mouseLine.style.display = "block";   
+    document.addEventListener('mousedown', startPainting);
+    document.addEventListener('mouseup', stopPainting);
+    document.addEventListener("mousemove", sketch)
+    }
+})
+
 
 //dislay starting X, Y position in slider
 let startX = document.querySelector("#startX");
@@ -84,6 +104,15 @@ width.addEventListener("input",function(){
     displayWidth.innerHTML=this.value
 })
 
+
+//display mouseline value in slider
+let mouseline = document.querySelector("#mouse-linewidth")
+const displayMouthline = document.querySelector("#display-mouseline-value")
+displayMouthline.innerHTML = mouseline.value
+mouseline.addEventListener("input",function(){
+    displayMouthline.innerHTML=this.value
+})
+
 const height = document.querySelector("#height-value")
 const displayHeight = document.querySelector("#display-height-value")
 displayHeight.innerHTML = height.value
@@ -105,6 +134,7 @@ const ctx = canvas.getContext("2d");
 const draw = document.querySelector("#draw-btn");
 
 draw.addEventListener("click", ()=>{
+    draw.style.cursor.pointer;
     if (lineId.checked) {
     ctx.beginPath();
     ctx.moveTo(startX.value, startY.value)
@@ -145,7 +175,9 @@ draw.addEventListener("click",()=>{
 //clear button
 const clearBtn = document.querySelector("#clear-btn")
 clearBtn.addEventListener("click", ()=>{
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let confirmClear = confirm("Are you sure to clear?")
+    if (confirmClear){
+    ctx.clearRect(0, 0, canvas.width, canvas.height)};
 })
 
 //save image buttons
@@ -212,7 +244,15 @@ let language ={
 
         "h5 switch" : "Please complete the following registration form for entering competition:",
 
-        "randow switch":"Random", 
+        "random switch":"Random",
+        
+        "line switch": "Line",
+
+        "circle switch": "Circle",
+
+        "rect switch": "Rectangle",
+
+        "mouse switch":"Draw with Mouse"
     },
 
     cn:{
@@ -230,9 +270,17 @@ let language ={
 
         "download switch" : "保存图片",
 
-        "randow switch":"随机", 
+        "random switch":"随机", 
 
         "h5 switch" : "请填写以下报名表以参加比赛:",
+
+        "line switch": "线条",
+
+        "circle switch": "圆形",
+
+        "rect switch": "矩形",
+
+        "mouse switch":"鼠标"
     }
 }
 
@@ -299,6 +347,49 @@ function randomFunc(){
     fcolor.value = `#${ranfcolor}`
 }
 
+// Stores the initial position of the cursor
+let coord = {x:0 , y:0}; 
+   
+// // set a flag
+let paint = false;
+// Updates the coordianates of the cursor when an event e is triggered 
+function getPosition(event){
+  coord.x = event.clientX - canvas.offsetLeft;
+  coord.y = event.clientY - canvas.offsetTop;
+}
+  
+// The following functions toggle the flag to start and stop drawing
+function startPainting(event){
+    if (mouseID.checked){
+    myCanvas.style.cursor = "url('/paint.cur'),auto"
+    paint = true;
+    getPosition(event);
+    }
+}
 
-
-
+function stopPainting(){
+  paint = false;
+}
+    
+function sketch(event){
+  if (!paint) return;
+  ctx.beginPath();
+    
+  ctx.lineWidth = mouseline.value;
+   
+  // set to a round shape.
+  ctx.lineCap = "round";
+    
+  ctx.strokeStyle = bcolor.value;
+      
+  // The cursor to start drawing
+  ctx.moveTo(coord.x, coord.y);
+   
+  // The position of the cursor gets updated when move the mouse around.
+  getPosition(event);
+   
+  ctx.lineTo(coord.x , coord.y);
+    
+  // Draws the line.
+  ctx.stroke();
+}

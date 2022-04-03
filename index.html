@@ -56,7 +56,7 @@
       <p>Choose a shape:</p>
       <!-- line shape -->
       <input type="radio" id="line" name="shape">
-        <label for="line">Line</label><br>
+        <label for="line" class="line switch">Line</label><br>
 
       <div class="end-value">
         <label for="endX">Ending position X (0 - 400)</label>
@@ -66,9 +66,6 @@
         <label for="endY">Ending position Y (0 - 400)</label>
         <input type="range" id="endY" min="0" max="400" value="400">
         <p class="display-endY">Value:<span id="display-endY-value"></span></p><br>
-
-
-
 
         <label for="lineWidth">Select a line width</label>
         <select id="lineWidth">
@@ -81,7 +78,7 @@
 
       <!-- circle shape -->
       <input type="radio" id="circle" name="shape">
-        <label for="circle">Circle</label><br>
+        <label for="circle" class="circle switch">Circle</label><br>
 
       <div class="radius">
         <label for="radius-value">Select Radius (0 - 100) </label>
@@ -91,7 +88,7 @@
 
     <!-- Rectangle shape -->
       <input type="radio" id="rect" name="shape">
-        <label for="rect">Rectangle</label><br>
+        <label for="rect" class="rect switch">Rectangle</label><br>
 
       <div class="width-height">
         <label for="width-value">Select Width (0 - 200) </label>
@@ -100,6 +97,16 @@
         <label for="width-value">Select Height (0 - 200) </label>
         <input type="range" id="height-value" min="0" max="200" value="50">
         <p class="display-height">Value:<span id="display-height-value"></span></p><br>
+      </div>
+
+    <!-- Draw with mouse -->
+      <input type="radio" id="mouse" name="shape">
+        <label for="mouse" class="mouse switch">Draw with Mouse</label><br>
+
+      <div class="mouse-line">
+      <label for="mouse-linewidth">Select a line width (0 -10) </label>
+      <input type="range" id="mouse-linewidth" name="mouse-linewidth" min="0" max="10" value="3">
+      <p class="display-mouseline">Value:<span id="display-mouseline-value"></span></p><br>
       </div>
 
       <!-- user choose color -->
@@ -115,13 +122,12 @@
 
       <!-- buttons -->
       <button id="draw-btn" class="draw switch">Draw</button>
-      <button id="random-btn" class="randow switch">Random</button>
+      <button id="random-btn" class="random switch">Random</button>
       <button id="clear-btn" class="clear switch">Clear</button>
       <button id="image-btn" class="download switch">Save Drawing</button>
     </div>
     </div>
 
- 
     <form class="form" id="reg-form" action="/process.php" method="post" accept-charset="utf-8" enctype="multipart/form-data" autocomplete="on">
       <h5 class="h5 switch">Please complete the following registration form for entering competition:</h5>
       <label for="username">Username:</label>
