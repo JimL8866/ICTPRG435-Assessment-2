@@ -4,11 +4,12 @@ let fillcolor = document.querySelector(".fill-color")
 const lineId = document.querySelector("#line")
 lineId.addEventListener("click",() =>{
     if (lineId.checked) {
-        endValue.style.display = "block"
-        radius.style.display ="none"
-        widthHeight.style.display="none"
-        fillcolor.style.display = "none"
-        myCanvas.style.cursor="default"
+        endValue.style.display = "block";
+        radius.style.display ="none";
+        widthHeight.style.display="none";
+        fillcolor.style.display = "none";
+        myCanvas.style.cursor="default";
+        mouseLine.style.display = "none"; 
     }
 })
 
@@ -17,11 +18,12 @@ let radius = document.querySelector(".radius")
 const circleId = document.querySelector("#circle")
 circleId.addEventListener("click",() =>{
     if(circleId.checked) {
-        radius.style.display = "block"
-        endValue.style.display ="none"
-        widthHeight.style.display="none"
-        fillcolor.style.display="inline-block"
-        myCanvas.style.cursor="default"
+        radius.style.display = "block";
+        endValue.style.display ="none";
+        widthHeight.style.display="none";
+        fillcolor.style.display="inline-block";
+        myCanvas.style.cursor="default";
+        mouseLine.style.display = "none"; 
     }
 })
 
@@ -31,11 +33,12 @@ let widthHeight = document.querySelector(".width-height")
 const rectId = document.querySelector("#rect")
 rectId.addEventListener("click",() =>{
     if(rectId.checked) {
-        widthHeight.style.display = "block"
-        endValue.style.display ="none"
-        radius.style.display="none"
-        fillcolor.style.display="inline-block"
-        myCanvas.style.cursor="default"
+        widthHeight.style.display = "block";
+        endValue.style.display ="none";
+        radius.style.display="none";
+        fillcolor.style.display="inline-block";
+        myCanvas.style.cursor="default";
+        mouseLine.style.display = "none"; 
     }
 })
 
@@ -175,7 +178,7 @@ draw.addEventListener("click",()=>{
 //clear button
 const clearBtn = document.querySelector("#clear-btn")
 clearBtn.addEventListener("click", ()=>{
-    let confirmClear = confirm("Are you sure to clear?")
+    let confirmClear = confirm("Are you sure to clear? This action can't be undone.");
     if (confirmClear){
     ctx.clearRect(0, 0, canvas.width, canvas.height)};
 })
