@@ -19,6 +19,6 @@ app.get("/", (req, res)=>{
 
 
 app.listen(7500, ()=>{
-    console.log("server is currently running on port 80 at http://127.0.0.1:7500");
+    console.log("server is currently running on port 7500 at http://127.0.0.1:7500");
 })
 
