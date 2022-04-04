@@ -1,0 +1,23 @@
+{
+  "type" :"module",
+  "name": "ictprg435-assessment-2",
+  "version": "1.0.0",
+  "description": "This is a web page for Abstract Art Competation",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimL8866/ICTPRG435-Assessment-2.git"
+  },
+  "author": "JL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimL8866/ICTPRG435-Assessment-2/issues"
+  },
+  "homepage": "https://github.com/JimL8866/ICTPRG435-Assessment-2#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

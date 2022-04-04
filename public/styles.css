@@ -1,0 +1,254 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #DFDFDE;
+}
+
+h4 {
+  margin: 0.5rem 0;
+}
+
+h5 {
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+
+/* Style the header */
+.header {
+  position: relative;
+  grid-area: header;
+  background-color: #f1f1f1;
+  padding: 3rem;
+}
+
+.lan{
+  position: absolute;
+  top:1rem;
+  right:1rem;
+  font-size:0.8rem;
+}
+ 
+.fa-solid{
+  color: #F56D91
+}
+
+/* Style the title */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color:#0093AB
+}
+
+/* Style instruction */
+.instructions {
+  text-align: justify;
+  background-color: #f1f1f1;
+  font-size:0.9rem;
+  color: #00AFC1
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'left right'
+    'form form '
+    'footer footer';
+  padding: 0 19.5%;
+}
+
+.left, .right {
+  padding: 10px;
+
+}
+
+/* Style the left column */
+.left {
+  display: flex;
+  background-color: #aaa;
+  align-items: center;
+  justify-content: center
+}
+
+/* Style the right column */
+.right {
+  grid-area: right;
+  background-color: #ccc
+}
+
+/* Style canvas */
+.canvas {
+  padding: 3rem 0;
+
+}
+
+#myCanvas {
+  border: 1px solid #000000;
+  background-color: white;
+}
+
+.draw-control{
+  padding: 1rem;
+}
+
+/* endvalue, radius, width and height display none */
+.end-value,
+.radius,
+.width-height,
+.fill-color,
+.mouse-line{
+  display: none;
+  padding:0.5rem 0;
+}
+
+.display-startX,
+.display-startY,
+.display-endX,
+.display-endY,
+.display-radius,
+.display-width,
+.display-height,
+.display-mouseline{
+  display: inline-block
+}
+
+.color-palette {
+  padding: 0.5rem 0;
+  padding-bottom: 2rem;
+}
+
+#bcolor {
+  margin-right: 1rem;
+}
+
+/* button */
+#draw-btn {
+  background: #3498db;
+  border-radius: 2rem;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin:0 1rem;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+#draw-btn {
+  margin-left: 0;
+}
+
+#draw-btn:hover {
+  background: #3cb0fd;
+}
+
+#random-btn {
+  background:#9b9103af;
+  border-radius: 2rem;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin:0 0.5rem;
+  cursor: pointer;
+}
+
+#random-btn:hover {
+  background: #e4d508af;
+}
+
+#clear-btn {
+  background: #d80a48;
+  border-radius: 2rem;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin:0 0.5rem;
+  cursor: pointer;
+}
+
+#clear-btn:hover {
+  background: #ec4972;
+}
+
+#image-btn {
+  background: #05a81b;
+  border-radius: 2rem;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin:0 0.5rem;
+  cursor: pointer;
+}
+
+#image-btn:hover {
+  background: #6dce61;
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  height: 3rem;
+  border-top: 1px solid rgb(221, 217, 217)
+}
+
+#copyright {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.icon {
+  display: flex;
+  display: inline-block;
+}
+
+#twitter{
+  color:#5584AC;
+  margin:0 1rem 0 0;
+
+}
+
+#linkedin{
+  color: #1C658C
+}
+
+#facebook{
+  color:#11468F;
+  margin:0 1rem 0 0;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+ @media (max-width: 1200px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header' 
+      'left' 
+      'right' 
+      'form' 
+      'footer';
+  }
+} 
+
+
+.form {
+  grid-area: form;
+  background-color: #EEEEEE;
+  padding: 0.5rem 1rem;
+}
+
+
+/* form label*/
+#reg-form input {
+  margin-right: 1.5rem;
+}
+
+#reg-form label {
+  display: inline-block;
+} 
