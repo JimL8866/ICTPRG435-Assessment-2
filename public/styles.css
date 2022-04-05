@@ -58,6 +58,10 @@ h5 {
   padding: 0 19.5%;
 }
 
+.left{
+  height: 47rem;
+}
+
 .left, .right {
   padding: 10px;
 
@@ -89,7 +93,7 @@ h5 {
 }
 
 .draw-control{
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 /* endvalue, radius, width and height display none */
@@ -98,7 +102,7 @@ h5 {
 .width-height,
 .fill-color,
 .mouse-line{
-  display: none;
+  visibility: hidden;
   padding:0.5rem 0;
 }
 
@@ -109,12 +113,12 @@ h5 {
 .display-radius,
 .display-width,
 .display-height,
+.fill-color,
 .display-mouseline{
   display: inline-block
 }
 
 .color-palette {
-  padding: 0.5rem 0;
   padding-bottom: 2rem;
 }
 
@@ -252,3 +256,20 @@ h5 {
 #reg-form label {
   display: inline-block;
 } 
+
+
+.endX-inline {
+  margin-right: 2rem;
+  display: inline;
+
+}
+
+.width-height {
+  padding: 0
+}
+
+.radius {
+  padding: 0.6rem 0;
+}
+
+.color-palette

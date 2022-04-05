@@ -4,12 +4,12 @@ let fillcolor = document.querySelector(".fill-color")
 const lineId = document.querySelector("#line")
 lineId.addEventListener("click",() =>{
     if (lineId.checked) {
-        endValue.style.display = "block";
-        radius.style.display ="none";
-        widthHeight.style.display="none";
-        fillcolor.style.display = "none";
+        endValue.style.visibility = "visible";
+        radius.style.visibility = "hidden";
+        widthHeight.visibility = "hidden";
+        fillcolor.style.visibility="hidden";
         myCanvas.style.cursor="default";
-        mouseLine.style.display = "none"; 
+        mouseLine.style.visibility = "hidden"; 
     }
 })
 
@@ -18,12 +18,12 @@ let radius = document.querySelector(".radius")
 const circleId = document.querySelector("#circle")
 circleId.addEventListener("click",() =>{
     if(circleId.checked) {
-        radius.style.display = "block";
-        endValue.style.display ="none";
-        widthHeight.style.display="none";
-        fillcolor.style.display="inline-block";
+        radius.style.visibility = "visible";
+        endValue.style.visibility = "hidden";
+        widthHeight.style.visibility = "hidden";
+        fillcolor.style.visibility="visible";
         myCanvas.style.cursor="default";
-        mouseLine.style.display = "none"; 
+        mouseLine.style.visibility = "hidden";
     }
 })
 
@@ -33,12 +33,12 @@ let widthHeight = document.querySelector(".width-height")
 const rectId = document.querySelector("#rect")
 rectId.addEventListener("click",() =>{
     if(rectId.checked) {
-        widthHeight.style.display = "block";
-        endValue.style.display ="none";
-        radius.style.display="none";
-        fillcolor.style.display="inline-block";
+        widthHeight.style.visibility = "visible";
+        endValue.style.visibility = "hidden";
+        radius.style.visibility = "hidden";
+        fillcolor.style.visibility="visible";
         myCanvas.style.cursor="default";
-        mouseLine.style.display = "none"; 
+        mouseLine.style.visibility = "hidden"; 
     }
 })
 
@@ -48,11 +48,11 @@ let mouseLine = document.querySelector(".mouse-line")
 const mouseID = document.querySelector("#mouse");
 mouseID.addEventListener("click",()=>{
     if (mouseID.checked){
-    radius.style.display ="none"
-    widthHeight.style.display="none"
-    fillcolor.style.display = "none"
-    endValue.style.display ="none"
-    mouseLine.style.display = "block";   
+    radius.style.visibility = "hidden";
+    widthHeight.style.visibility = "hidden";
+    fillcolor.style.visibility="hidden";
+    endValue.style.visibility = "hidden";
+    mouseLine.style.visibility = "visible";  
     document.addEventListener('mousedown', startPainting);
     document.addEventListener('mouseup', stopPainting);
     document.addEventListener("mousemove", sketch)

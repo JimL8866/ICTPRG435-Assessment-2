@@ -59,13 +59,17 @@
         <label for="line" class="line switch">Line</label><br>
 
       <div class="end-value">
-        <label for="endX">Ending position X (0 - 400)</label>
-        <input type="range" id="endX" min="0" max="400" value="400">
-        <p class="display-endX">Value:<span id="display-endX-value"></span></p><br>
 
-        <label for="endY">Ending position Y (0 - 400)</label>
+        <div class="endX-inline">
+        <label for="endX" display="inline"> X Goto </label>
+        <input type="range" id="endX" min="0" max="400" value="400">
+        <p class="display-endX">Value:<span id="display-endX-value"></span></p>
+      </div>
+        
+        <label for="endY">Y Goto</label>
         <input type="range" id="endY" min="0" max="400" value="400">
         <p class="display-endY">Value:<span id="display-endY-value"></span></p><br>
+     
 
         <label for="lineWidth">Select a line width</label>
         <select id="lineWidth">
