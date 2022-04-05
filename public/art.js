@@ -43,21 +43,7 @@ rectId.addEventListener("click",() =>{
 })
 
 
-//dispaly mouse-line value for user
-let mouseLine = document.querySelector(".mouse-line")
-const mouseID = document.querySelector("#mouse");
-mouseID.addEventListener("click",()=>{
-    if (mouseID.checked){
-    radius.style.visibility = "hidden";
-    widthHeight.style.visibility = "hidden";
-    fillcolor.style.visibility="hidden";
-    endValue.style.visibility = "hidden";
-    mouseLine.style.visibility = "visible";  
-    document.addEventListener('mousedown', startPainting);
-    document.addEventListener('mouseup', stopPainting);
-    document.addEventListener("mousemove", sketch)
-    }
-})
+
 
 
 //dislay starting X, Y position in slider
@@ -350,17 +336,38 @@ function randomFunc(){
     fcolor.value = `#${ranfcolor}`
 }
 
+
+
+//dispaly mouse-line value for user
+let mouseLine = document.querySelector(".mouse-line")
+const mouseID = document.querySelector("#mouse");
+mouseID.addEventListener("click",()=>{
+    if (mouseID.checked){
+    radius.style.visibility = "hidden";
+    widthHeight.style.visibility = "hidden";
+    fillcolor.style.visibility="hidden";
+    endValue.style.visibility = "hidden";
+    mouseLine.style.visibility = "visible";  
+    document.addEventListener('mousedown', startPainting);
+    document.addEventListener('mouseup', stopPainting);
+    document.addEventListener("mousemove", sketch)
+    }
+})
+
+
 // Stores the initial position of the cursor
+
 let coord = {x:0 , y:0}; 
    
 // // set a flag
 let paint = false;
 // Updates the coordianates of the cursor when an event e is triggered 
 function getPosition(event){
-  coord.x = event.clientX - canvas.offsetLeft;
-  coord.y = event.clientY - canvas.offsetTop;
+
+  let cRect=canvas.getBoundingClientRect();
+  coord.x = Math.round(event.clientX-cRect.left)
+  coord.y = Math.round(event.clientY-cRect.top)
 }
-  
 // The following functions toggle the flag to start and stop drawing
 function startPainting(event){
     if (mouseID.checked){
